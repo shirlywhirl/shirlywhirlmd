@@ -12,7 +12,8 @@ def user(token, uid = ''):
     api = IgBasicApi(long_term_token=token)
     print("Operating as:")
     print(api.get_user_info())
-    dir(api)
+    resp = api.get_user_medias(user_id=uid)
+    return resp
 
 if __name__ == '__main__':
     fire.Fire()
