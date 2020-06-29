@@ -1,19 +1,30 @@
 import aiohttp
 import asyncio
 import fire
+import json
+import os
 
-async def _get(session, url):
-    async with session.get(url) as resp:
+async def _get(session, url, token):
+    params = { grant_type: 'ig_refresh_token', access_token: token }
+    async with session.get(url, params) as resp:
+        assert resp.ok, resp.message
         return await resp.text()
 
-async def python():
+async def _refresh_token(path):
+    data = None
+    with open(path) as f:
+	data = f.read()
+    assert data, "No data found at path"
+
     async with aiohttp.ClientSession() as session:
-        html = await _get(session, 'http://python.org')
+        html = await _get(session, 'https://graph.instagram.com/refresh_access_token', data)
         print(html)
 
-def hello():
+def refresh_token(path):
+    print("Attempting to refresh token at: {}".format(path))
     loop = asyncio.get_event_loop()
-    loop.run_until_complete(python())
+    loop.run_until_complete(refresh_token(path))
+    print("Token at: {} refreshed.".format(path))
 
 if __name__ == '__main__':
     fire.Fire()
