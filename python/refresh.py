@@ -13,10 +13,10 @@ async def _get(session, url, token):
 async def _refresh_token(path):
     data = None
     with open(path) as f:
-	data = f.read()
+        data = f.read()
     assert data, "No data found at path"
 
-    async with aiohttp.ClientSession() as session:
+    with aiohttp.ClientSession() as session:
         html = await _get(session, 'https://graph.instagram.com/refresh_access_token', data)
         print(html)
 
