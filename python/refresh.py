@@ -20,11 +20,12 @@ async def _refresh_token(path):
         resp = await _get(
             session, "https://graph.instagram.com/refresh_access_token", data
         )
-        token = json.loads(resp)['access_token']
+        token = json.loads(resp)["access_token"]
 
     with open(path, "w") as f:
         f.write(token)
         f.truncate()
+
 
 def refresh_token(path):
     print("Attempting to refresh token at: {}".format(path))
