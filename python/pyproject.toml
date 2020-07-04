@@ -12,6 +12,7 @@ python-facebook-api = {git = "https://github.com/sns-sdks/python-facebook.git"}
 
 [tool.poetry.dev-dependencies]
 pytest-sugar = "^0.9.3"
+black = "^19.10b0"
 
 [build-system]
 requires = ["poetry>=0.12"]
