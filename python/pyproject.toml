@@ -8,7 +8,7 @@ authors = ["Justin Barnowski <jbarno54@gmail.com>"]
 python = "^3.6"
 aiohttp = "^3.6.2"
 fire = "^0.3.1"
-python-facebook-api = "^0.6.1"
+python-facebook-api = {git = "https://github.com/sns-sdks/python-facebook.git"}
 
 [tool.poetry.dev-dependencies]
 pytest-sugar = "^0.9.3"
