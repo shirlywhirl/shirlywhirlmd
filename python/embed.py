@@ -46,12 +46,12 @@ def get_all_html(token):
     loop.run_until_complete(_embed(token))
 
 
-def get_latest_html(token):
+def get_last_n_posts(token, n):
     """
     Given a long user token spit their latest posts as embedable html
     """
     loop = asyncio.get_event_loop()
-    loop.run_until_complete(_embed(token, count=1))
+    loop.run_until_complete(_embed(token, count=n))
 
 
 if __name__ == "__main__":
