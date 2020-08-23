@@ -32,6 +32,15 @@
 
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics.id }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', "{{ site.google_analytics.id }}");
+    </script>
+
 
     {% if site.google_analytics.pv.proxy_url and site.google_analytics.pv.enabled %}
       <link rel="preconnect" href="{{ site.google_analytics.pv.proxy_url }}" crossorigin="use-credentials">
