@@ -70,21 +70,11 @@ def main():
         cat = cat
 
         for index in range(0, len(data)):
-            data[index] = re.sub('categories: \[Medicine\]', 'categories: {}'.format(list(cat)), data[index])
-            data[index] = re.sub('tags: \[comic\]', 'tags: {}'.format(list(tags)), data[index])
-        #data = _process_unit(data,'categories: [Medicine]', 'categories', cat)
-        #data = _process_unit(data,'tags: [comic]', 'tags', tags)
+            data[index] = re.sub('categories: \[Medicine, Cardiology\]', 'categories: {}'.format(list(cat)), data[index])
+            data[index] = re.sub('tags: \[comic, retrospect, imposter syndrome\]', 'tags: {}'.format(list(tags)), data[index])
 
         with open(post_path, 'w') as post:
             post.writelines(data)
-
-def _process_unit(lines, old, key, value):
-    for data in lines:
-        if any(value):
-            data.replace(old, '{}: {}'.format(key, value))
-        else:
-            data.replace(old, '{}: no_{}'.format(key, key))
-    return lines
 
 if __name__ == '__main__':
     main()
