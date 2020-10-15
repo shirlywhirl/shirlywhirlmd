@@ -85,7 +85,6 @@ $sidebar-display: "sidebar-display";
   .site-title {
     text-align: center;
     a {
-      // color: var(--site-title-color);
       font-weight: 900;
       font-size: 1.5rem;
       letter-spacing: .5px;
@@ -461,11 +460,6 @@ $sidebar-display: "sidebar-display";
 #post-wrapper {
   min-height: calc(100vh - #{$topbar-height}
     - #{$footer-height} - #{$post-extend-min-height})!important;
-  .post-content {
-    a:hover {
-      @extend %link-hover;
-    }
-  }
 }
 
 #topbar-wrapper.row,
@@ -662,7 +656,11 @@ kbd {
 }
 
 sup {
-  @extend %anchor;
+  z-index: 1;
+  &:target {
+    @extend %anchor;
+    z-index: 0;
+  }
 }
 
 .footnotes ol {
@@ -734,6 +732,10 @@ a {
 
 } // a
 
+img {
+  max-width: 100%;
+}
+
 .post {
   h1 {
     margin-top: 3rem;
@@ -787,7 +789,6 @@ div.post-content .table-wrapper {
 }
 
 
-
 /*--- post ---*/
 
 .pageviews .fa-spinner {
@@ -814,18 +815,62 @@ div.post-content .table-wrapper {
   margin-top: 2rem;
   overflow-wrap: break-word;
   word-wrap: break-word;
-  a {
-    @extend %link-color;
-    @extend %link-underline;
-    &:hover {
-      @extend %link-hover;
+
+  @mixin img($caption: false) {
+    >img:not([style]) {
+      margin: .5rem 0;
+
+      &:not(.normal):not(.left):not(.right) {
+        @include align-center;
+
+        @if $caption {
+          @include img-caption;
+        }
+      }
+
+      &.left {
+        float: left;
+        margin: .75rem 1rem 1rem 0;
+      }
+
+      &.right {
+        float: right;
+        margin: .75rem 0 1rem 1rem;
+      }
+
     }
   }
+
+  @mixin img-caption {
+    + em {
+      display: block;
+      text-align: center;
+      font-style: normal;
+      font-size: 80%;
+      padding: 0;
+      color: #6d6c6c;
+    }
+  }
+
+  a {
+    &:not(.img-hyperlink) {
+      @extend %link-color;
+      @extend %link-underline;
+      &:hover {
+        @extend %link-hover;
+      }
+    }
+    &.img-hyperlink {
+      @include img;
+      @include img-caption;
+    }
+  }
+
   p {
     font-size: 1.08rem;
-  }
+    @include img(true);
+  }// p
 }
-
 
 .tag:hover {
   @extend %tag-hover;
@@ -1093,7 +1138,7 @@ div.post-content .table-wrapper {
     justify-content: center!important;
   }
 
-  sup {
+  sup:target {
     padding-top: 3.4rem;
   }
 

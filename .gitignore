@@ -1,2 +1,18 @@
+# hidden files
+.*
+
+# python compiled files
+*.pyc
 venv/
-.jekyll-cache/
+
+# jekyll debug
+_site
+
+# Jeykll Gemfile.lock
+Gemfile.lock
+
+# yui-compressor
+*.jar
+
+# bundle cache
+vendor
