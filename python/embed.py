@@ -3,14 +3,9 @@ import asyncio
 import fire
 import json
 
+from post import Post
+
 from pyfacebook import IgBasicApi
-
-
-def hello(world="World"):
-    """
-    Say Hello to fire.
-    """
-    return "Hello " + world
 
 
 def _user_by_token(token, count=None):
@@ -35,8 +30,8 @@ async def _embed(token, count=None):
     async with aiohttp.ClientSession() as session:
         for media in medias:
             text = await _get(session, "https://api.instagram.com/oembed", media)
-            print(json.loads(text)["html"])
-
+            post = Post(media, json.loads(text)["html"])
+            post.write_jekyll_post()
 
 def get_all_html(token):
     """

@@ -14,38 +14,29 @@ toc: false
 {{ content }}
 """)
 
-    def __init__(ig_post):
+    def __init__(self, ig_post, html):
         self.data = ig_post
-        self.html = None
-
-    def set_html(html):
         self.html = html
 
-    def get_html():
-        return self.html
-
-    def get_tags():
+    def get_tags(self):
         # Could it be denser? Probably
         return [word[1::].lower() for word in self.data.caption.split() if '#' in word]
 
-    def get_categories():
+    def get_categories(self):
         year = self.data.timestamp[:4:]
         if year in ['2020', '2019', '2018']:
             return "Residency"
         else:
             return "Medical School"
 
-    def write_jekyll_post():
-        if not self.html:
-            print("Error, writing content before grabbing")
-            return
+    def write_jekyll_post(self):
         filename = "/mnt/src/shirlywhirlmd/_posts/" + self.get_title() + '-' + self.get_title()
         with open(filename, 'w') as post:
-            post.write(post_template.render(title=self.get_title(),
+            post.write(Post.post_template.render(title=self.get_title(),
                                             categories=self.get_categories(),
                                             tags=self.get_tags(),
-                                            content=self.get_html()))
+                                            content=self.html))
 
-    def get_title():
+    def get_title(self):
         # TODO: Make this smart and fix above
         return self.data.timestamp[:10:]
