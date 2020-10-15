@@ -30,7 +30,7 @@ toc: false
             return "Medical School"
 
     def write_jekyll_post(self):
-        filename = "/mnt/src/shirlywhirlmd/_posts/" + self.get_title() + '-' + self.get_title()
+        filename = "/mnt/src/shirlywhirlmd/_posts/" + self.get_title() + '-' + self.get_title() + ".md"
         with open(filename, 'w') as post:
             post.write(Post.post_template.render(title=self.get_title(),
                                             categories=self.get_categories(),
