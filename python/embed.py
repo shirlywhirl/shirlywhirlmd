@@ -2,6 +2,7 @@ import aiohttp
 import asyncio
 import fire
 import json
+import time
 
 from post import Post
 
@@ -22,6 +23,8 @@ def _user_by_token(token, count=None):
 async def _get(session, url, media):
     params = {"url": media.permalink, "hidecaption": 0, "omitscript": 1}
     async with session.get(url, params=params) as resp:
+        print(resp.status)
+        time.sleep(6)
         return await resp.text()
 
 

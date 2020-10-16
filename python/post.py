@@ -20,6 +20,8 @@ toc: false
 
     def get_tags(self):
         # Could it be denser? Probably
+        if not self.data.caption:
+            return []
         return sorted([word[1::].lower() for word in self.data.caption.split() if '#' in word])
 
     def get_categories(self):
