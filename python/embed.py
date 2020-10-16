@@ -17,13 +17,17 @@ def _user_by_token(token, count=None):
     api = IgBasicApi(long_term_token=token)
     user = api.get_user_info()
     resp = api.get_user_medias(user_id=user.id, count=count)
-    return sorted(resp, key=lambda post: post.timestamp, reverse=True)
+    # trim
+    resp = [post for post in resp if post.timestamp >= '2018-12-30' and post.timestamp < '2019-02-14']
+
+    return (sorted(resp, key=lambda post: post.timestamp, reverse=False))
 
 
 async def _get(session, url, media):
     params = {"url": media.permalink, "hidecaption": 1, "omitscript": 1}
     async with session.get(url, params=params) as resp:
         print(resp.status)
+        time.sleep(10)
         return await resp.text()
 
 
