@@ -27,9 +27,9 @@ toc: false
     def get_categories(self):
         year = self.data.timestamp[:4:]
         if year in ['2020', '2019', '2018']:
-            return "Residency"
+            return ["Residency"]
         else:
-            return "Medical School"
+            return ["Medical School"]
 
     def write_jekyll_post(self):
         filename = "/mnt/src/shirlywhirlmd/_posts/" + self.get_title() + '-' + self.get_title() + ".md"
