@@ -21,7 +21,7 @@ toc: false
         # Could it be denser? Probably
         if not self.data.caption:
             return []
-        return sorted([word[1::].lower() for word in self.data.caption.split() if '#' in word])
+        return sorted([word[1::].lower() for word in self.data.caption.split() if '#' in word and not '.' in word])
 
     def get_categories(self):
         year = self.data.timestamp[:4:]
