@@ -20,7 +20,7 @@ toc: false
 
     def get_tags(self):
         # Could it be denser? Probably
-        return [word[1::].lower() for word in self.data.caption.split() if '#' in word]
+        return sorted([word[1::].lower() for word in self.data.caption.split() if '#' in word])
 
     def get_categories(self):
         year = self.data.timestamp[:4:]
