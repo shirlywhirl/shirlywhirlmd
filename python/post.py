@@ -3,8 +3,7 @@
 from jinja2 import Template
 
 class Post(object):
-    post_template = Template("""
----
+    post_template = Template("""---
 title: {{ title }}
 author: Shirlene Obuobi
 categories: {{ categories }}
