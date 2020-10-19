@@ -20,4 +20,4 @@ jobs:
         with:
           poetry-version: ${{ matrix.poetry-version }}
       - name: Pull instagram data down
-        run: bash tools/pull_insta.sh
+        run: bash tools/insta_pull.sh
