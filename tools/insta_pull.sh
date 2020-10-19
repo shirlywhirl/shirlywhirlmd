@@ -13,5 +13,5 @@ WORK_DIR="$(dirname $(dirname $(realpath "$0")))"
 echo $WORK_DIR
 
 cd python
-poetry install .
+poetry install
 poetry show
