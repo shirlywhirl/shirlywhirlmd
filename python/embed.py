@@ -18,16 +18,18 @@ def _user_by_token(token, count=None):
     user = api.get_user_info()
     resp = api.get_user_medias(user_id=user.id, count=count)
     # trim
-    resp = [post for post in resp if post.timestamp >= '2018-12-30' and post.timestamp < '2019-02-14']
+    resp = [post for post in resp if post.timestamp < '2020-09-28']
 
-    return (sorted(resp, key=lambda post: post.timestamp, reverse=False))
+    return (sorted(resp, key=lambda post: post.timestamp, reverse=True))
 
 
 async def _get(session, url, media):
     params = {"url": media.permalink, "hidecaption": 1, "omitscript": 1}
-    async with session.get(url, params=params) as resp:
-        print(resp.status)
-        time.sleep(10)
+    async with session.get(url, params=params, raise_for_status=False) as resp:
+        if resp.status != 200:
+            print("Failed for: " + media.timestamp)
+            time.sleep(360)
+        time.sleep(60)
         return await resp.text()
 
 
