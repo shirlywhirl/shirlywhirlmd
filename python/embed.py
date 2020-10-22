@@ -21,10 +21,9 @@ def _user_by_token(token, count=None):
 
 
 async def _get(session, url, media):
-    params = {"url": media.permalink, "hidecaption": 0, "omitscript": 1}
+    params = {"url": media.permalink, "hidecaption": 1, "omitscript": 1}
     async with session.get(url, params=params) as resp:
         print(resp.status)
-        time.sleep(6)
         return await resp.text()
 
 
@@ -33,7 +32,7 @@ async def _embed(token, count=None):
     async with aiohttp.ClientSession() as session:
         for media in medias:
             text = await _get(session, "https://api.instagram.com/oembed", media)
-            post = Post(media, json.loads(text)["html"])
+            post = Post(media, json.loads(text)["html"] + '\n' + media.caption)
             post.write_jekyll_post()
 
 def get_all_html(token):
