@@ -10,6 +10,7 @@ aiohttp = "^3.6.2"
 fire = "^0.3.1"
 python-facebook-api = {git = "https://github.com/sns-sdks/python-facebook.git"}
 jinja2 = "^2.11.2"
+babel = "^2.8.0"
 
 [tool.poetry.dev-dependencies]
 pytest-sugar = "^0.9.3"

@@ -35,6 +35,21 @@ async def _embed(token, count=None):
             post = Post(media, json.loads(text)["html"] + '\n' + media.caption)
             post.write_jekyll_post()
 
+async def _render_templates(token):
+    medias = _user_by_token(token, count=2)
+    async with aiohttp.ClientSession() as session:
+        for media in medias:
+            post = Post(media)
+            post.write_jekyll_post()
+
+def skip_embed(token):
+    """
+    Given a long user token their posts as embedable html
+    """
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(_render_templates(token))
+
+
 def get_all_html(token):
     """
     Given a long user token spit out all their posts as embedable html
