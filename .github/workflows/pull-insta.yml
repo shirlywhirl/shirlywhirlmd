@@ -20,4 +20,8 @@ jobs:
         with:
           poetry-version: ${{ matrix.poetry-version }}
       - name: Pull instagram data down
-        run: bash tools/insta_pull.sh
+        run: |
+          cd python
+          poetry run embed.py skip_embed A_TOKEN
+      - name: commit changes
+        run: git add ../_posts/*; git commit -m "auto(action): commit via pull_insta auto: ${GITHUB_RUN_NUMBER}"; git push
