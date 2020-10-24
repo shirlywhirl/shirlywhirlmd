@@ -24,4 +24,7 @@ jobs:
           cd python
           poetry run embed.py skip_embed A_TOKEN
       - name: commit changes
-        run: git add ../_posts/*; git commit -m "auto(action): commit via pull_insta auto: ${GITHUB_RUN_NUMBER}"; git push
+        run: |
+          git add ../_posts/*
+          git commit -m "auto(action): commit via pull_insta auto: ${GITHUB_RUN_NUMBER}"
+          git push
