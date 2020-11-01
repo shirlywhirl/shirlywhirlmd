@@ -21,7 +21,7 @@ cmd="bundle exec jekyll s"
 JEKYLL_DOCKER_HOME="/srv/jekyll"
 
 realtime=false
-docker=false
+docker=true
 
 _help() {
   echo "Usage:"
