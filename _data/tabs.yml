@@ -19,6 +19,11 @@
   path: tabs
   url: tags
 -
+  name: "Shop"
+  path: shop
+  url: https://shop.shirlywhirlmd.com
+  icon: "fas fa-shopping-cart"
+-
   name: "Archives"
   path: tabs
   url: archives
