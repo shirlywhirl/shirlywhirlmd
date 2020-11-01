@@ -44,7 +44,7 @@ async def _render_templates(token, count):
 
 def skip_embed(token, count=None):
     """
-    Given a long user token their posts as embedable html
+    AUTO:Given a long user token their posts as embedable html
     """
     loop = asyncio.get_event_loop()
     loop.run_until_complete(_render_templates(token, count))
