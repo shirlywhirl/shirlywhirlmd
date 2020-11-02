@@ -20,15 +20,15 @@
   url: tags
 -
   name: "Shop"
-  url: https://shop.shirlywhirlmd.com
+  ex_url: https://shop.shirlywhirlmd.com
   icon: "fas fa-shopping-cart"
 -
   name: "FAQ"
-  url: https://forms.gle/bNEsKmoNxVZTpoWp9
+  ex_url: https://forms.gle/bNEsKmoNxVZTpoWp9
   icon: "fas fa-question"
 -
   name: "Patreon"
-  url: https://www.patreon.com/shirlywhirlmd
+  ex_url: https://www.patreon.com/shirlywhirlmd
   icon: "fas fa-patreon"
 -
   name: "Archives"
