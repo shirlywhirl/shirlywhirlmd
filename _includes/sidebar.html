@@ -42,10 +42,7 @@
       {% endif %}
     {% endif %}
 
-    <li class="nav-item d-flex justify-content-center
-      {% if item.url == page_urls.last
-        or item.name == page.tab_active
-        or item.name == "Home" and page.layout == "home" %}active{% endif %}">
+    <li class="nav-item d-flex justify-content-center">
       <a href="{{ ref }}" class="nav-link d-flex justify-content-center align-items-center w-100">
         <i class="fa-fw {{ item.icon }} ml-xl-3 mr-xl-3 unloaded"></i>
         <span>{{ item.name | upcase }}</span>
