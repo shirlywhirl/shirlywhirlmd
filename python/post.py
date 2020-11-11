@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 
+import os
+
 from datetime import date
 from babel.dates import format_date
 from jinja2 import Template
 
 class Post(object):
+    POST_DIR = os.path.join(os.getcwd(), "..", "_posts")
     post_template = Template("""---
 title: {{ title }}
 author: Shirlene Obuobi
@@ -33,7 +36,7 @@ toc: false
             return ["Medical School"]
 
     def write_jekyll_post(self):
-        filename = "/mnt/src/shirlywhirlmd/_posts/" + self.get_title() + '-' + self.get_title() + ".md"
+        filename = os.path.join(Post.POST_DIR, self.get_title()) + '-' + self.get_title() + ".md"
         with open(filename, 'w') as post:
             post.write(Post.post_template.render(title=self.get_title(),
                                             categories=self.get_categories(),
