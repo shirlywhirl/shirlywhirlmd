@@ -1,6 +1,7 @@
 ---
 title: FAQ
 toc: true
+layout: page
 ---
 When did you start drawing?
 
