@@ -7,6 +7,7 @@ on:
       - .gitignore
       - README.md
       - LICENSE
+      - python/
 
 jobs:
   continuous-delivery:
@@ -19,7 +20,7 @@ jobs:
     steps:
       - uses: actions/setup-ruby@v1
         with:
-          ruby-version: 2.6.x
+          ruby-version: 2.7.x
 
       - name: Install tools
         run: |
