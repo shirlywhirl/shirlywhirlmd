@@ -12,3 +12,5 @@ end
 group :test do
   gem "html-proofer"
 end
+
+gem "rexml", "~> 3.2"
