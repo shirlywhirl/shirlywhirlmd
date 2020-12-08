@@ -25,9 +25,6 @@ layout: page
 ### Would you be interested in a speaking engagement/ teaching a class?
 >I might be. :) Before you send me an inquiry, please see if your institution will cover a $500/hr honorarium first. Email me with inquiries at shirlywhirlmd@gmail.com
 
-### Will you do an interview with me? 
->Please send all interview inquiries to shirlywhirlmd@gmail.com. Please check out my interview with [UChicago Magazine](https://mag.uchicago.edu/shirly), [Medicine on the Midway](https://issuu.com/medicineonthemidway/docs/medicineonthemidway-spring2018/32), and [Student Doctor Network](https://www.studentdoctor.net/2017/08/01/16454/). 
-
 ### Do you have advice for premeds or medical students?
 >I’m not the best person to go to for advice for premeds-- it’s been a long time since I was one, and the landscape is different! For medical students, my advice depends on what you want to do. Medicine is a rat race, but you can run how you want to. Want to get into a competitive specialty? Then focus on your Step exams, as those are (for now) the determining factor for whether you’ll get through the door. If you aren’t deeply passionate about an area, focus on research projects you can conceivably finish, not the ones you’re necessarily passionate about. Keep your head down and ignore what everyone else is doing. People talk a mad game in medical school; protect your peace. Also, show the empathy that you intend to have for your patients to your classmates-- you don’t know who is struggling, in what, or why. 
 
