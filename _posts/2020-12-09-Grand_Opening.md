@@ -1,5 +1,5 @@
 ---
-title: 2020-12-09
+title: Grand Opening
 author: Shirlene Obuobi
 categories: ['Residency']
 tags: ['blackdoctors', 'doctor', 'graphicmedicine', 'inpatient', 'intern', 'internalmedicine', 'md', 'medicalschool', 'medicine', 'medlife', 'medschool', 'medstudent', 'nurse', 'physician', 'premed', 'premedmotivation', 'residency', 'resident', 'womeninmedicine']
