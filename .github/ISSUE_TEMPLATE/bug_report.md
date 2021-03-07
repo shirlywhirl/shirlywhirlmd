@@ -19,11 +19,12 @@ labels: bug
 ### To Reproduce
 
 Steps to reproduce the behavior:
-
+<!--
 1. Go to '...'
 2. Click on '....'
 3. Scroll down to '....'
 4. See error
+-->
 
 ### Expected behavior
 <!-- A clear and concise description of what you expected to happen. -->
@@ -33,21 +34,23 @@ Steps to reproduce the behavior:
 
 ### Software
 <!-- Please complete the following information -->
-- Ruby version: [by running: `ruby -v`]
-- Gem version: [by running: `gem -v`]
-- Bundler version: [by running: `bundle -v`]
-- Jekyll version: [by running: `bundle list | grep " jekyll "`]
+- Ruby version: <!-- by running: `ruby -v` -->
+- Gem version: <!-- by running: `gem -v`-->
+- Bundler version: <!-- by running: `bundle -v`-->
+- Jekyll version: <!-- by running: `bundle list | grep " jekyll "` -->
 
 ### Desktop
-<!-- Please complete the following information -->
+<!-- If necessary, uncomment and fill in the following list:
 - OS: [e.g. macOS 10.15.6]
-- Browser: [e.g. Chrome 85.0.4183.83 (Official Build) (64-bit)]
+- Browser: [e.g. Chrome 85.0.4183.83 (64-bit)]
+-->
 
 ### Smartphone
-<!-- please complete the following information -->
+<!-- If necessary, uncomment and fill in the following list:
 - Device: [e.g. iPhone 6]
 - OS: [e.g. iOS 13.6.1]
 - Browser: [e.g. Chrome 22]
+-->
 
 ### Additional context
 <!-- Add any other context about the problem here. -->

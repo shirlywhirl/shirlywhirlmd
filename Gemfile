@@ -1,12 +1,11 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 
-gem "jekyll", ">=3.8.6"
+gemspec
 
-# Official Plugins
-group :jekyll_plugins do
-  gem "jekyll-paginate"
-  gem "jekyll-redirect-from"
-  gem "jekyll-seo-tag", "~> 2.6.1"
+group :test do
+  gem "html-proofer", "~> 3.18"
 end
 
 group :test do
