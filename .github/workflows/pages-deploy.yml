@@ -48,13 +48,6 @@ jobs:
           bundle config path ${{ env.GEMS_PATH }}
           bundle install --jobs 4 --retry 3
 
-      - name: Check baseurl
-        run: |
-          baseurl="$(grep '^baseurl:' _config.yml | yq r - baseurl)"
-          if [[ -n $baseurl ]]; then
-            echo "SPEC_TEST=_site_no_baseurl" >> $GITHUB_ENV
-          fi
-
       - name: Build Site
         run: |
           bash tools/build.sh
