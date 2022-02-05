@@ -1,7 +1,7 @@
 name: 'Scheduled insta-render'
 on:
   schedule:
-    - cron: "0 3 */7 * *"
+    - cron: '0 3 */7 * *'
     paths-ignore:
       - .gitignore
       - README.md
@@ -9,7 +9,6 @@ on:
 
 jobs:
   scheduled-update:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -18,11 +17,10 @@ jobs:
         with:
           fetch-depth: 0  # for posts's lastmod
       - name: Checkout pylab
-	uses: actions/checkout@v2
-	with:
-	  repository: shirlywhirl/pylab
-	  path: pylab
-
+        uses: actions/checkout@v2
+        with:
+          repository: shirlywhirl/pylab
+          path: pylab
       - uses: actions/setup-python@v2
       - name: Run poetry image
         uses: abatilo/actions-poetry@v2.0.0
