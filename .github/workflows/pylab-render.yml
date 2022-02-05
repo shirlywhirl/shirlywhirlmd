@@ -1,4 +1,3 @@
-name: 'Scheduled insta-render'
 on:
   schedule:
     - cron: '0 3 */7 * *'
