@@ -13,11 +13,6 @@
   ex_url: https://shop.shirlywhirlmd.com
   icon: "fas fa-shopping-cart"
 -
-  name: "FAQ"
-  path: tabs
-  url: faq
-  icon: "fas fa-question"
--
   name: "Patreon"
   ex_url: https://www.patreon.com/shirlywhirlmd
   icon: "fas fa-patreon"

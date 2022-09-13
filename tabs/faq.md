@@ -54,7 +54,3 @@ layout: page
 
 ### When can I read your book? 
 >I won't be able to tell anyone but my close friends/family details about the book until I get the go ahead... so just keep an eye out for an announcement and assume that you won't be able to read it for at least another 2 years :( 
-
-### Do you want to submit a question for the FAQ? Fill out this form here: 
-
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdObsmaZzO6zph3b6sPS95diLCSt6uDZ9aZuqm92VcS9uyonQ/viewform?embedded=true" width="640" height="631" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
